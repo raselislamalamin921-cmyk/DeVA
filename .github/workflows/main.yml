@@ -19,7 +19,9 @@ jobs:
           java-version: '17'
 
       - name: Set up Android SDK
-        uses: android-actions/setup-android@v3
+        uses: android-actions/setup-android@v4
+        with:
+          accept-android-sdk-licenses: true
 
       - name: Grant execute permission
         run: chmod +x gradlew
@@ -32,4 +34,3 @@ jobs:
         with:
           name: DeVA-debug-APK
           path: app/build/outputs/apk/debug/*.apk
-
